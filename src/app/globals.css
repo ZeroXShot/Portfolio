@@ -1,0 +1,404 @@
+@import "tailwindcss";
+
+/* ============================================
+   CUSTOM THEME - Tailwind CSS v4
+   Estética futurista y minimalista
+   ============================================ */
+
+@theme {
+  /* Colores principales - Paleta futurista */
+  --color-primary-50: #f0f9ff;
+  --color-primary-100: #e0f2fe;
+  --color-primary-200: #bae6fd;
+  --color-primary-300: #7dd3fc;
+  --color-primary-400: #38bdf8;
+  --color-primary-500: #0ea5e9;
+  --color-primary-600: #0284c7;
+  --color-primary-700: #0369a1;
+  --color-primary-800: #075985;
+  --color-primary-900: #0c4a6e;
+  --color-primary-950: #082f49;
+
+  /* Colores de acento - Cian futurista */
+  --color-accent-50: #ecfeff;
+  --color-accent-100: #cffafe;
+  --color-accent-200: #a5f3fc;
+  --color-accent-300: #67e8f9;
+  --color-accent-400: #22d3ee;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0891b2;
+  --color-accent-700: #0e7490;
+  --color-accent-800: #155e75;
+  --color-accent-900: #164e63;
+  --color-accent-950: #083344;
+
+  /* Fondos oscuros */
+  --color-dark-50: #f8fafc;
+  --color-dark-100: #f1f5f9;
+  --color-dark-200: #e2e8f0;
+  --color-dark-300: #cbd5e1;
+  --color-dark-400: #94a3b8;
+  --color-dark-500: #64748b;
+  --color-dark-600: #475569;
+  --color-dark-700: #334155;
+  --color-dark-800: #1e293b;
+  --color-dark-900: #0f172a;
+  --color-dark-950: #020617;
+
+  /* Colores de estado */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Fuentes */
+  --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Espaciado personalizado */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-128: 32rem;
+
+  /* Border radius */
+  --radius-4xl: 2rem;
+  --radius-5xl: 2.5rem;
+
+  /* Sombras futuristas con glow */
+  --shadow-glow-sm: 0 0 10px rgba(14, 165, 233, 0.3);
+  --shadow-glow: 0 0 20px rgba(14, 165, 233, 0.4);
+  --shadow-glow-lg: 0 0 30px rgba(14, 165, 233, 0.5);
+  --shadow-glow-accent: 0 0 20px rgba(6, 182, 212, 0.4);
+
+  /* Animaciones */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-pulse-glow: pulse-glow 2s ease-in-out infinite;
+  --animate-gradient: gradient 8s ease infinite;
+  --animate-slide-up: slide-up 0.5s ease-out;
+  --animate-slide-down: slide-down 0.5s ease-out;
+  --animate-fade-in: fade-in 0.5s ease-out;
+  --animate-scale-in: scale-in 0.3s ease-out;
+}
+
+/* ============================================
+   KEYFRAMES
+   ============================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.6);
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark-950 text-dark-100 font-sans antialiased;
+  background-image: 
+    radial-gradient(ellipse at top, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
+  min-height: 100vh;
+}
+
+/* Selection */
+::selection {
+  @apply bg-primary-500/30 text-white;
+}
+
+/* Scrollbar personalizado */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-dark-600 rounded-full;
+  transition: background-color 0.2s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-500;
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+/* Gradient text */
+.text-gradient {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, var(--color-primary-400) 0%, var(--color-accent-400) 100%);
+}
+
+.text-gradient-accent {
+  @apply bg-clip-text text-transparent;
+  background-image: linear-gradient(135deg, var(--color-accent-300) 0%, var(--color-primary-300) 100%);
+}
+
+/* Gradient backgrounds */
+.bg-gradient-futuristic {
+  background: linear-gradient(135deg, var(--color-dark-900) 0%, var(--color-dark-950) 100%);
+}
+
+.bg-gradient-primary {
+  background: linear-gradient(135deg, var(--color-primary-600) 0%, var(--color-accent-600) 100%);
+}
+
+.bg-gradient-mesh {
+  background: 
+    radial-gradient(at 40% 20%, var(--color-primary-900) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, var(--color-accent-900) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, var(--color-primary-950) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, var(--color-dark-900) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, var(--color-accent-950) 0px, transparent 50%),
+    var(--color-dark-950);
+}
+
+/* Glass effect */
+.glass {
+  @apply bg-dark-900/50 backdrop-blur-xl border border-dark-700/50;
+}
+
+.glass-light {
+  @apply bg-dark-800/30 backdrop-blur-lg border border-dark-600/30;
+}
+
+/* Glow effects */
+.glow {
+  box-shadow: var(--shadow-glow);
+}
+
+.glow-sm {
+  box-shadow: var(--shadow-glow-sm);
+}
+
+.glow-lg {
+  box-shadow: var(--shadow-glow-lg);
+}
+
+.glow-accent {
+  box-shadow: var(--shadow-glow-accent);
+}
+
+/* Hover glow */
+.hover-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+/* Border gradient */
+.border-gradient {
+  position: relative;
+  border: none;
+  background-clip: padding-box;
+}
+
+.border-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--color-primary-500), var(--color-accent-500));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+/* Grid pattern overlay */
+.grid-pattern {
+  background-image: 
+    linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Noise texture */
+.noise {
+  position: relative;
+}
+
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  opacity: 0.02;
+  pointer-events: none;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  @apply font-semibold tracking-tight;
+}
+
+/* ============================================
+   FOCUS STYLES
+   ============================================ */
+
+:focus-visible {
+  @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-dark-950;
+}
+
+/* ============================================
+   MARKDOWN CONTENT STYLES
+   ============================================ */
+
+.prose-custom {
+  @apply text-dark-200;
+}
+
+.prose-custom h1 {
+  @apply text-3xl font-bold text-white mb-6 mt-8;
+}
+
+.prose-custom h2 {
+  @apply text-2xl font-semibold text-white mb-4 mt-8;
+}
+
+.prose-custom h3 {
+  @apply text-xl font-semibold text-dark-100 mb-3 mt-6;
+}
+
+.prose-custom p {
+  @apply mb-4 leading-relaxed;
+}
+
+.prose-custom a {
+  @apply text-primary-400 hover:text-primary-300 underline underline-offset-2 transition-colors;
+}
+
+.prose-custom ul, .prose-custom ol {
+  @apply mb-4 pl-6;
+}
+
+.prose-custom li {
+  @apply mb-2;
+}
+
+.prose-custom ul li {
+  @apply list-disc;
+}
+
+.prose-custom ol li {
+  @apply list-decimal;
+}
+
+.prose-custom code {
+  @apply bg-dark-800 text-primary-300 px-1.5 py-0.5 rounded text-sm font-mono;
+}
+
+.prose-custom pre {
+  @apply bg-dark-900 border border-dark-700 rounded-xl p-4 overflow-x-auto mb-4;
+}
+
+.prose-custom pre code {
+  @apply bg-transparent p-0;
+}
+
+.prose-custom blockquote {
+  @apply border-l-4 border-primary-500 pl-4 italic text-dark-300 my-4;
+}
+
+.prose-custom img {
+  @apply rounded-xl my-6;
+}
+
+.prose-custom hr {
+  @apply border-dark-700 my-8;
+}
+
+.prose-custom table {
+  @apply w-full border-collapse mb-4;
+}
+
+.prose-custom th, .prose-custom td {
+  @apply border border-dark-700 px-4 py-2 text-left;
+}
+
+.prose-custom th {
+  @apply bg-dark-800 font-semibold;
+}

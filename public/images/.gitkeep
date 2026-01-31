@@ -1,0 +1,12 @@
+# Directorio de imágenes
+# Coloca aquí las imágenes del portfolio
+
+# Estructura recomendada:
+# /images/
+#   ├── avatar.webp          - Tu foto de perfil
+#   ├── og-image.webp        - Imagen para compartir en redes (1200x630)
+#   ├── projects/            - Imágenes de proyectos (16:9)
+#   ├── courses/             - Diplomas y certificados (4:3)
+#   ├── publications/        - Imágenes de publicaciones (16:9)
+#   ├── companies/           - Logos de empresas
+#   └── education/           - Logos de universidades
